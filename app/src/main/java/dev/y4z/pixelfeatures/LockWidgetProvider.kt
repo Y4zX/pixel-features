@@ -2,11 +2,12 @@ package dev.y4z.pixelfeatures
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.SystemClock
 import android.widget.RemoteViews
+import android.provider.Settings
+
 
 class LockWidgetProvider : AppWidgetProvider() {
     companion object {
@@ -14,17 +15,18 @@ class LockWidgetProvider : AppWidgetProvider() {
         private const val DOUBLE_TAP_WINDOW = 350L
         private var lastTapElapsed: Long = 0L
 
-        fun requestUpdate(context: Context) {
-            val mgr = AppWidgetManager.getInstance(context)
-            val cn = ComponentName(context, LockWidgetProvider::class.java)
-            val ids = mgr.getAppWidgetIds(cn)
-            if (ids.isNotEmpty()) {
-                val intent = Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE).apply {
-                    component = cn
-                    putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
-                }
-                context.sendBroadcast(intent)
-            }
+        private fun isAccessibilityServiceEnabled(context: Context): Boolean {
+            val enabledServices = Settings.Secure.getString(
+                context.contentResolver,
+                Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
+            )
+            return enabledServices?.contains("dev.y4z.pixelfeatures/dev.y4z.pixelfeatures.AccessibilityService") == true
+        }
+
+        private fun openAccessibilitySettings(context: Context) {
+            val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
         }
     }
 
@@ -48,6 +50,11 @@ class LockWidgetProvider : AppWidgetProvider() {
     override fun onReceive(context: Context, intent: Intent) {
         super.onReceive(context, intent)
         if (intent.action == ACTION_WIDGET_TAP) {
+            if (!isAccessibilityServiceEnabled(context)) {
+                openAccessibilitySettings(context)
+                return
+            }
+
             val now = SystemClock.elapsedRealtime()
             val delta = now - lastTapElapsed
             lastTapElapsed = now
@@ -56,4 +63,6 @@ class LockWidgetProvider : AppWidgetProvider() {
             }
         }
     }
+
 }
+
