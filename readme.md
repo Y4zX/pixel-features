@@ -1,6 +1,6 @@
 # PixelFeatures
 
-**PixelFeatures** is an open-source Android app designed to bring back and enhance missing or limited features for Google Pixel phone users. Built with Kotlin, it focuses on simple, customizable tools to improve your daily Pixel experience—especially for those who miss certain stock Android functionalities.
+**PixelFeatures** is an open-source Android app designed to bring back and enhance missing or limited features for Google Pixel phone users. Built with Kotlin, it focuses on simple, customizable tools to improve your daily Pixel experience - especially for those who miss certain stock Android functionalities.
 
 ## Key Features
 - **Sound Quick Settings Tile**: A custom tile in your notification panel that instantly opens the device's volume controller (media slider) with a single tap. Long-press opens the full sound settings for quick adjustments. No more digging through menus!
@@ -10,7 +10,7 @@
 This project was created to fill gaps in Pixel's feature set, like the absence of a dedicated sound tile in Quick Settings and easy double-tap sleep options. It's lightweight, customizable, and easy to integrate into your Pixel setup.
 
 ## Getting Started
-1. **Clone the Repo**: `git clone https://github.com/y4zx/pixelfeatures.git`
+1. **Clone the Repo**: `git clone https://github.com/y4zx/pixel-features.git`
 2. **Build in Android Studio**: Open the project, sync Gradle, and build the APK.
 3. **Install & Configure**:
    - Install the APK on your Pixel device (Android 14+ recommended).
