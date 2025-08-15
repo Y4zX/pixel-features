@@ -2,13 +2,11 @@ package dev.y4z.pixelfeatures
 
 import android.app.Activity
 import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
 import android.os.Bundle
 import android.service.quicksettings.TileService
 
-// Optional shorter names
 import android.media.AudioManager.ADJUST_SAME
 import android.media.AudioManager.STREAM_MUSIC
 import android.media.AudioManager.FLAG_SHOW_UI
