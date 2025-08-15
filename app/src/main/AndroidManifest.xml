@@ -18,6 +18,14 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:exported="false" />
 
+        <activity
+            android:name=".TileLongPressActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".AccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
@@ -34,7 +42,7 @@
             android:name=".SoundControlTileService"
             android:exported="true"
             android:icon="@android:drawable/ic_lock_silent_mode_off"
-            android:label="Sound Control"
+            android:label="Sound"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
