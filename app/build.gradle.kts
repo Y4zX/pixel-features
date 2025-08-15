@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "dev.y4z.pixelfeatures"
-        minSdk = 33
+        minSdk = 36
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
