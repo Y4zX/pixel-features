@@ -1,26 +1,46 @@
 # PixelFeatures
 
-**PixelFeatures** is an open-source Android app designed to bring back and enhance missing or limited features for Google Pixel phone users. Built with Kotlin, it focuses on simple, customizable tools to improve your daily Pixel experience - especially for those who miss certain stock Android functionalities.
+PixelFeatures is an open‑source Android app that restores and enhances missing or limited conveniences on Google Pixel devices. Built with Kotlin, it offers lightweight, customizable tools to streamline everyday tasks—especially if stock Android removed or hid features users rely on.
 
-## Key Features
-- **Sound Quick Settings Tile**: A custom tile in your notification panel that instantly opens the device's volume controller (media slider) with a single tap. Long-press opens the full sound settings for quick adjustments. No more digging through menus!
-- **Double-Tap to Sleep Widget**: Add a home screen widget that locks your screen with a double-tap. Perfect for Pixel users who want a quick way to put their device to sleep without physical buttons. (Requires enabling the app's Accessibility Service.)
-- **Accessibility Integration**: Leverages Android's Accessibility Service for secure screen locking, ensuring compatibility and minimal battery impact.
+## ✨ Highlights
+- Sound Quick Settings Tile: Add a tile that opens the media volume slider instantly with a tap; long‑press to jump straight into full sound settings—no menu diving.
+- Double‑Tap to Sleep Widget: Place a widget on the home screen to lock the device with a double‑tap, reducing wear on physical buttons. Requires enabling the Accessibility Service.
+- Secure Accessibility Integration: Uses Accessibility Service solely to perform screen lock—kept minimal for reliability and battery efficiency.
 
-This project was created to fill gaps in Pixel's feature set, like the absence of a dedicated sound tile in Quick Settings and easy double-tap sleep options. It's lightweight, customizable, and easy to integrate into your Pixel setup.
+This project focuses on practicality and privacy: small footprint, no bloat, and transparent behavior.
 
-## Getting Started
-1. **Clone the Repo**: `git clone https://github.com/y4zx/pixel-features.git`
-2. **Build in Android Studio**: Open the project, sync Gradle, and build the APK.
-3. **Install & Configure**:
-   - Install the APK on your Pixel device (Android 14+ recommended).
-   - Enable the Accessibility Service in Settings > Accessibility for the lock feature.
-   - Add the widget to your home screen and the tile to Quick Settings.
-4. **Permissions**: Grant Accessibility for locking; no other special permissions needed.
+## 🚀 Getting Started
+1. Clone the repo:
+   - git clone https://github.com/y4zx/pixel-features.git
+2. Open in Android Studio, sync Gradle, and build the APK.
+3. Install & configure:
+   - Install on a Pixel device (Android 14+ required; minSdk 34, targetSdk 36).
+   - Enable the Accessibility Service in Settings → Accessibility (needed for lock).
+   - Add the widget to the home screen and the tile to Quick Settings.
+4. Permissions:
+   - Accessibility permission for screen locking; no other special permissions.
 
-## Tech Stack
-- **Language**: Kotlin
-- **Platform**: Android (minSdk 34, targetSdk 36)
-- **Key Components**: AppWidgetProvider, TileService, AccessibilityService
+Note: Google Play Protect may warn about apps that request Accessibility for lock actions. If flagged, temporarily disable Play Protect during install, then re‑enable it. The service is used only for lock functionality.
 
-Contributions welcome! If you're a Pixel user missing other features, open an issue or PR to suggest additions. Star the repo if it helps you out. 😊
+## 🧰 Tech Stack
+- Language: Kotlin
+- Platform: Android (minSdk 34, targetSdk 36)
+- Components: AppWidgetProvider, TileService, AccessibilityService
+- Design goals: Minimal, battery‑friendly, no unwanted background activities
+
+## 🔐 Trust & Transparency
+- Open source—inspect, modify, and build locally.
+- No trackers or hidden behavior; features are scoped to what’s necessary.
+- Prefer building from source if extra assurance is desired.
+
+## 📌 Feature Summary
+- Sound Quick Settings tile (tap: media slider; long‑press: full sound settings)
+- Double‑tap to sleep home widget (requires Accessibility)
+- Battery‑optimized, lightweight implementation
+- Android 14+ support
+- Already tested on real devices
+
+## 🤝 Contributing
+Ideas, bug reports, and PRs are welcome—especially if there are other Pixel conveniences worth bringing back. If PixelFeatures helps, consider starring the repo. 😊
+
+— Built to make Pixels feel a little more personal and powerful.
